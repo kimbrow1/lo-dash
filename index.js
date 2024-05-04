@@ -1,10 +1,22 @@
 'use strict'
 
-// should declar _ instead of kodash
-const _ = require('_')
+const inquirer = require('inquirer');
 
-const exampleArray = [1, [2, [3, [4,2,[9]],5]],5, [6]];
+const question = 
+[{
+    type: 'input',
+    name: 'name',
+    message: 'what is your name',
+},
+    {
+        type: 'input',
+        name: 'color',
+        message: 'what is your faviorte color',
 
-const flatArray = _.flatten(exampleArray);
+    }
+];
 
- 
+// happening asynchrony
+ inquirer.prompt(question).then((answer) => {
+    console.log(answer);
+ });
